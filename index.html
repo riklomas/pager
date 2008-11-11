@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>rikrikrik - pager jQuery plug-in</title>
+		<script src="jquery.js" type="text/javascript"></script>
+		<script src="jquery.pager.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#example1').pager('div');
+				$('#example2').pager('p', {
+				    navId: 'nav2',
+					height: '15em'
+				});
+				$('#example3').pager('p', {
+				    navId: 'nav3',
+				    prevText: 'Previous',
+				    nextText: 'Next',
+				    linkText: ['Page 1', 'Page 2', 'Page 3', 'Page 4']
+				});				
+				$('#example4').pager('p', {
+				    navId: 'nav4',
+				    navAttach: 'after',
+				    prevText: 'Previous',
+				    nextText: 'Next',
+				    linkText: ['Page 1', 'Page 2', 'Page 3', 'Page 4'],
+				    linkWrap: '<div></div>'
+				});
+			})
+		</script>
+		<script src="/mint/?js" type="text/javascript"></script>
+		<style type="text/css" media="screen">
+		    body {
+				margin: 0 10px;
+		        width: 560px;
+		        font: 76% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+				border-top: 10px solid #000;
+				border-bottom: 50px solid #000;
+		    }
+			h1 {
+				font-size: 200%;
+				margin: 0;
+			}
+			h1 span {
+				font-size: 50%;
+				font-weight: normal;
+				vertical-align: super;
+			}
+			h3 {
+				font-size:  150%;
+			}
+			h4 {
+				font-size: 110%;
+			}
+			a {
+				color: #666;
+			}
+			a:hover {
+				color: #999;
+			}						
+			.examples {
+				border: 1px solid #666;
+				margin: 10px 0;
+			}
+			.examples p {
+				padding: 5px;
+				margin: 0;
+			}
+			.nav {
+				background: #eee;
+				border-top: 1px solid #ccc;
+				padding: 5px;
+			}
+			.nav a {
+				padding: 0 5px;
+			}
+			.nav a.highlight {
+				color: #000;
+				font-weight: bold;
+			}			
+			pre {
+			    font-size: 120%;
+			}
+			.hr {
+			    border-top: 5px solid #000;
+			}
+			.hr hr {
+			    display: none;
+			}
+			dt {
+		        font-weight: bold;
+		    }
+			#rikrikrik {
+				margin: 10px 0 0 0;
+			}
+			#rikrikrik a {
+				margin-bottom: 0;
+				background: #099;
+				color: #fff;
+				text-decoration: none;
+				font-weight: bold;
+				padding: 0px 2px;
+			}
+		</style>		
+	</head>
+	<body>
+		<p id="rikrikrik"><a href="http://rikrikrik.com">rikrikrik</a></p>
+		<h1>pager jQuery plug-in<span> v0.1.0</span></h1>
+		
+		<ul>
+			<li><a href="#examples">Examples</a></li>
+			<li><a href="#options">Options</a></li>
+			<li><a href="#tested">Tested on...</a></li>
+			<li><a href="#download">Download</a></li>
+		</ul>
+		
+		<div class="hr">
+		    <hr />
+		</div>
+		
+		<h3 id="examples">Examples</h3>
+		<div id="example1" class="pager_examples">
+			<div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+			<div>
+				<p>Donec ultricies lectus. Cras nonummy, enim ac iaculis blandit, diam quam accumsan diam, ut faucibus nisi lorem non est. Proin convallis. Fusce malesuada lectus sed dui. Curabitur nec massa a arcu ullamcorper tincidunt. Nulla mattis, orci a tincidunt sollicitudin, orci eros porta tellus, lobortis aliquet arcu purus ac dui. Nullam consequat, sem nec fermentum consequat, magna lacus tincidunt ligula, vel tincidunt velit sem eu nisi. Vivamus fermentum tristique dui. Integer quis arcu ut metus fringilla laoreet. Nunc congue vehicula enim. Vestibulum lacus. Quisque feugiat, nisl eget congue volutpat, metus ante interdum turpis, id iaculis justo lorem at pede. Sed dui eros, ultricies non, volutpat ut, volutpat sed, tellus. Aliquam a nibh.
+				</p>
+			</div>
+		</div>
+
+<h4>Example Javascript</h4>		
+<pre>
+$('#example1').pager('div');	    
+</pre>
+<h4>Example HTML</h4>
+<pre>
+&lt;div id="example1"&gt;
+  &lt;div&gt;&lt;p&gt;Lorem ipsum...&lt;/p&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;p&gt;Donec ultricies...&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+		<div class="hr">
+		<hr />
+		</div>
+		
+		<div id="example2" class="pager_examples">
+			
+			<p>Donec ultricies lectus. Cras nonummy, enim ac iaculis blandit, diam quam accumsan diam, ut faucibus nisi lorem non est. Proin convallis. Fusce malesuada lectus sed dui. Curabitur nec massa a arcu ullamcorper tincidunt. Nulla mattis, orci a tincidunt sollicitudin, orci eros porta tellus, lobortis aliquet arcu purus ac dui. Nullam consequat, sem nec fermentum consequat, magna lacus tincidunt ligula, vel tincidunt velit sem eu nisi. Vivamus fermentum tristique dui. Integer quis arcu ut metus fringilla laoreet. Nunc congue vehicula enim. Vestibulum lacus. Quisque feugiat, nisl eget congue volutpat, metus ante interdum turpis, id iaculis justo lorem at pede. Sed dui eros, ultricies non, volutpat ut, volutpat sed, tellus. Aliquam a nibh.</p>
+
+			<p>Mauris quis risus. Mauris ut risus. Proin auctor dictum ante. Ut cursus. Nulla quis ante nec augue rutrum egestas. Vestibulum orci lorem, euismod ac, nonummy in, auctor vel, augue. Quisque vulputate, lorem ac tincidunt dignissim, libero pede pulvinar risus, ac lobortis dolor urna non elit. Morbi porttitor ipsum quis ligula vulputate molestie. Maecenas eget lectus mattis eros mollis fringilla. In eleifend dignissim velit. Maecenas metus purus, pretium sit amet, interdum vitae, interdum non, est. Vivamus purus enim, iaculis sed, consequat venenatis, tempor sed, lacus. Sed ornare. Ut lorem mauris, congue non, bibendum eget, laoreet eget, elit. Morbi mauris. Fusce urna massa, malesuada sit amet, cursus nec, dapibus sed, odio. Donec varius risus eu nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam id nisi.</p>
+
+			<p>Aenean pulvinar, erat nonummy auctor bibendum, nisi velit commodo turpis, non venenatis metus magna ac dui. Integer vehicula ligula eget leo. Nulla sagittis tincidunt enim. Integer quis augue. Proin sapien ligula, pharetra id, convallis dictum, feugiat non, ipsum. Etiam non lacus a magna aliquam auctor. Integer elementum. Mauris massa odio, viverra in, facilisis sed, condimentum eu, diam. Integer dui. In dictum imperdiet magna. Nam cursus, nulla a lacinia porttitor, eros tortor condimentum erat, ac ultrices nisl ante at urna. Etiam a tortor sit amet metus consequat pulvinar. Nam auctor urna nec libero. Integer tristique dui molestie lectus. Ut nibh purus, sagittis ut, vestibulum ac, commodo in, purus. Aenean dictum. Vivamus suscipit dapibus massa. Ut rhoncus ullamcorper justo. Morbi orci sem, congue eu, viverra aliquam, porttitor vel, magna.</p>
+
+			<p>Proin ligula arcu, feugiat ac, tincidunt vel, bibendum at, eros. Duis mollis magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin at quam quis leo fringilla elementum. Morbi sagittis commodo pede. Integer blandit, tortor bibendum placerat suscipit, tortor urna mattis nisi, sed mollis dolor purus nec est. In vitae enim. Cras commodo sem eu mauris. Suspendisse non risus non massa cursus blandit. Aenean quis lectus a sapien aliquet posuere. In ornare iaculis urna. Duis ultrices odio eu turpis. Nunc eget quam ornare ante scelerisque sollicitudin. Etiam non lectus. Sed sit amet tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet neque tempus nunc hendrerit mattis. Suspendisse potenti. Duis diam orci, ultrices vitae, iaculis in, laoreet nec, felis. Mauris eu mauris.</p>
+
+			<p>Pellentesque nisi. Sed neque augue, molestie nec, nonummy eu, viverra eu, quam. Quisque commodo, turpis et imperdiet dictum, mauris est posuere mi, eget vehicula nisi lorem sed pede. Aliquam laoreet. Morbi in diam ac orci sollicitudin aliquam. Maecenas lectus. Donec erat quam, gravida faucibus, molestie a, porta vel, purus. Suspendisse nibh nibh, faucibus at, ornare gravida, tristique ac, purus. Maecenas pulvinar leo dapibus nulla. Nam posuere tortor a felis interdum rutrum. In hac habitasse platea dictumst. Vivamus hendrerit. Morbi sit amet lectus at diam pharetra euismod. Proin ultricies lectus a ligula. In hac habitasse platea dictumst. Proin luctus, dui feugiat lacinia bibendum, tellus dui malesuada lacus, quis malesuada metus nibh sit amet nunc.</p>			
+			
+		</div>
+<pre>
+$('#example2').pager('p', {
+  navId: 'nav2',
+  height: '15em'
+});
+</pre>
+
+<div class="hr">
+<hr />
+</div>
+
+	<div id="example3" class="pager_examples">
+		
+		<p>Donec ultricies lectus. Cras nonummy, enim ac iaculis blandit, diam quam accumsan diam, ut faucibus nisi lorem non est. Proin convallis. Fusce malesuada lectus sed dui. Curabitur nec massa a arcu ullamcorper tincidunt. Nulla mattis, orci a tincidunt sollicitudin, orci eros porta tellus, lobortis aliquet arcu purus ac dui. Nullam consequat, sem nec fermentum consequat, magna lacus tincidunt ligula, vel tincidunt velit sem eu nisi. Vivamus fermentum tristique dui. Integer quis arcu ut metus fringilla laoreet. Nunc congue vehicula enim. Vestibulum lacus. Quisque feugiat, nisl eget congue volutpat, metus ante interdum turpis, id iaculis justo lorem at pede. Sed dui eros, ultricies non, volutpat ut, volutpat sed, tellus. Aliquam a nibh.</p>
+
+		<p>Mauris quis risus. Mauris ut risus. Proin auctor dictum ante. Ut cursus. Nulla quis ante nec augue rutrum egestas. Vestibulum orci lorem, euismod ac, nonummy in, auctor vel, augue. Quisque vulputate, lorem ac tincidunt dignissim, libero pede pulvinar risus, ac lobortis dolor urna non elit. Morbi porttitor ipsum quis ligula vulputate molestie. Maecenas eget lectus mattis eros mollis fringilla. In eleifend dignissim velit. Maecenas metus purus, pretium sit amet, interdum vitae, interdum non, est. Vivamus purus enim, iaculis sed, consequat venenatis, tempor sed, lacus. Sed ornare. Ut lorem mauris, congue non, bibendum eget, laoreet eget, elit. Morbi mauris. Fusce urna massa, malesuada sit amet, cursus nec, dapibus sed, odio. Donec varius risus eu nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam id nisi.</p>
+
+		<p>Aenean pulvinar, erat nonummy auctor bibendum, nisi velit commodo turpis, non venenatis metus magna ac dui. Integer vehicula ligula eget leo. Nulla sagittis tincidunt enim. Integer quis augue. Proin sapien ligula, pharetra id, convallis dictum, feugiat non, ipsum. Etiam non lacus a magna aliquam auctor. Integer elementum. Mauris massa odio, viverra in, facilisis sed, condimentum eu, diam. Integer dui. In dictum imperdiet magna. Nam cursus, nulla a lacinia porttitor, eros tortor condimentum erat, ac ultrices nisl ante at urna. Etiam a tortor sit amet metus consequat pulvinar. Nam auctor urna nec libero. Integer tristique dui molestie lectus. Ut nibh purus, sagittis ut, vestibulum ac, commodo in, purus. Aenean dictum. Vivamus suscipit dapibus massa. Ut rhoncus ullamcorper justo. Morbi orci sem, congue eu, viverra aliquam, porttitor vel, magna.</p>
+
+		<p>Proin ligula arcu, feugiat ac, tincidunt vel, bibendum at, eros. Duis mollis magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin at quam quis leo fringilla elementum. Morbi sagittis commodo pede. Integer blandit, tortor bibendum placerat suscipit, tortor urna mattis nisi, sed mollis dolor purus nec est. In vitae enim. Cras commodo sem eu mauris. Suspendisse non risus non massa cursus blandit. Aenean quis lectus a sapien aliquet posuere. In ornare iaculis urna. Duis ultrices odio eu turpis. Nunc eget quam ornare ante scelerisque sollicitudin. Etiam non lectus. Sed sit amet tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet neque tempus nunc hendrerit mattis. Suspendisse potenti. Duis diam orci, ultrices vitae, iaculis in, laoreet nec, felis. Mauris eu mauris.</p>
+			
+		
+	</div>
+<pre>
+$('#example3').pager('p', {
+  navId: 'nav3',
+  prevText: 'Previous',
+  nextText: 'Next',
+  linkText: ['Page 1', 'Page 2', 'Page 3', 'Page 4']
+});
+</pre>
+
+<div class="hr">
+<hr />
+</div>
+
+    <div id="example4" class="pager_examples">
+		
+		<p>Donec ultricies lectus. Cras nonummy, enim ac iaculis blandit, diam quam accumsan diam, ut faucibus nisi lorem non est. Proin convallis. Fusce malesuada lectus sed dui. Curabitur nec massa a arcu ullamcorper tincidunt. Nulla mattis, orci a tincidunt sollicitudin, orci eros porta tellus, lobortis aliquet arcu purus ac dui. Nullam consequat, sem nec fermentum consequat, magna lacus tincidunt ligula, vel tincidunt velit sem eu nisi. Vivamus fermentum tristique dui. Integer quis arcu ut metus fringilla laoreet. Nunc congue vehicula enim. Vestibulum lacus. Quisque feugiat, nisl eget congue volutpat, metus ante interdum turpis, id iaculis justo lorem at pede. Sed dui eros, ultricies non, volutpat ut, volutpat sed, tellus. Aliquam a nibh.</p>
+
+		<p>Mauris quis risus. Mauris ut risus. Proin auctor dictum ante. Ut cursus. Nulla quis ante nec augue rutrum egestas. Vestibulum orci lorem, euismod ac, nonummy in, auctor vel, augue. Quisque vulputate, lorem ac tincidunt dignissim, libero pede pulvinar risus, ac lobortis dolor urna non elit. Morbi porttitor ipsum quis ligula vulputate molestie. Maecenas eget lectus mattis eros mollis fringilla. In eleifend dignissim velit. Maecenas metus purus, pretium sit amet, interdum vitae, interdum non, est. Vivamus purus enim, iaculis sed, consequat venenatis, tempor sed, lacus. Sed ornare. Ut lorem mauris, congue non, bibendum eget, laoreet eget, elit. Morbi mauris. Fusce urna massa, malesuada sit amet, cursus nec, dapibus sed, odio. Donec varius risus eu nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam id nisi.</p>
+
+		<p>Aenean pulvinar, erat nonummy auctor bibendum, nisi velit commodo turpis, non venenatis metus magna ac dui. Integer vehicula ligula eget leo. Nulla sagittis tincidunt enim. Integer quis augue. Proin sapien ligula, pharetra id, convallis dictum, feugiat non, ipsum. Etiam non lacus a magna aliquam auctor. Integer elementum. Mauris massa odio, viverra in, facilisis sed, condimentum eu, diam. Integer dui. In dictum imperdiet magna. Nam cursus, nulla a lacinia porttitor, eros tortor condimentum erat, ac ultrices nisl ante at urna. Etiam a tortor sit amet metus consequat pulvinar. Nam auctor urna nec libero. Integer tristique dui molestie lectus. Ut nibh purus, sagittis ut, vestibulum ac, commodo in, purus. Aenean dictum. Vivamus suscipit dapibus massa. Ut rhoncus ullamcorper justo. Morbi orci sem, congue eu, viverra aliquam, porttitor vel, magna.</p>
+
+		<p>Proin ligula arcu, feugiat ac, tincidunt vel, bibendum at, eros. Duis mollis magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin at quam quis leo fringilla elementum. Morbi sagittis commodo pede. Integer blandit, tortor bibendum placerat suscipit, tortor urna mattis nisi, sed mollis dolor purus nec est. In vitae enim. Cras commodo sem eu mauris. Suspendisse non risus non massa cursus blandit. Aenean quis lectus a sapien aliquet posuere. In ornare iaculis urna. Duis ultrices odio eu turpis. Nunc eget quam ornare ante scelerisque sollicitudin. Etiam non lectus. Sed sit amet tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet neque tempus nunc hendrerit mattis. Suspendisse potenti. Duis diam orci, ultrices vitae, iaculis in, laoreet nec, felis. Mauris eu mauris.</p>
+			
+		
+	</div>
+
+<pre>
+$('#example4').pager('p', {
+  navId: 'nav4',
+  navAttach: 'after',
+  prevText: 'Previous',
+  nextText: 'Next',
+  linkText: ['Page 1', 'Page 2', 'Page 3', 'Page 4'],
+  linkWrap: '&lt;div&gt;&lt;/div&gt;'
+});
+</pre>
+
+<div class="hr">
+    <hr />
+</div>
+
+<h3 id="options">Options</h3>
+
+<dl>
+    <dt>navId</dt>
+    <dd>For use in more than one pagers per page, takes a string. Default 'nav'</dd>
+    <dt>navClass</dt>
+    <dd>Gives the nav of the pagers a CSS class. Default 'nav'</dd>
+    <dt>navAttach</dt>
+    <dd>Position of the nav. Takes either 'prepend', 'append', 'before' or 'after'. Default 'append'.</dd>
+    <dt>highlightClass</dt>
+    <dd>CSS class of the highlighted link. Default 'highlight'.</dd>
+    <dt>prevText</dt>
+    <dd>Text for previous link. Default '&amp;laquo;' which gives '&laquo;'</dd>
+    <dt>nextText</dt>
+    <dd>Text for next link. Default '&amp;raquo;' which gives '&raquo;'</dd>
+    <dt>linkText</dt>
+    <dd>Array of text for links. e.g. ['page 1', 'page 2', ...]</dd>
+    <dt>linkWrap</dt>
+    <dd>Wraps link in HTML using <a href="http://jquery.com/docs/Base/DOM/">jQuery wrap method</a>. e.g. '&lt;div&gt;&lt;/div&gt;' would wrap links in a div layer</dd>
+    <dt>height</dt>
+    <dd>Sets a min-height (height in IE) for your content. Default works out largest content automagically</dd>
+</dl>
+
+<div class="hr">
+    <hr />
+</div>
+
+<h3 id="tested">Tested on...</h3>
+
+<ul>
+	<li>Firefox 1.5, 2.0</li>
+	<li>IE 5.01, 5.5, 6.0</li>
+	<li>Safari 2</li>
+	<li>Opera 8.5+</li>
+</ul>
+
+<p>To be tested on IE7 &amp; FF1.0 very soon</p>
+
+<div class="hr">
+	<hr />
+</div>
+
+<h3 id="download">Download</h3>
+
+<ul>
+    <li><a href="jquery.pager.js">pager [Javascript file]</a></li>		
+    <li><a href="jquery.pager.txt">pager [Text file]</a></li>
+</ul>
+
+<p>Developed by Rik Lomas. Why not check out my <a href="/jquery/quicksearch/">quickSearch</a> plug-in too? Maybe, you would like to <a href="http://rikrikrik.com/">read my blog</a> too?</p>
+
+
+	</body>
+</html>
